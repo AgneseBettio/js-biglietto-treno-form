@@ -6,6 +6,9 @@
 body{
     background-color: #B91450;
 }
+section{
+    padding: 30px 50px;
+}
 .container{
     margin: auto;
     padding: 30px 50px;
