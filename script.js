@@ -50,7 +50,7 @@ ticketForm.addEventListener("submit", function (event) {
 
 //se clicchiamo su annulla dobbiamo ripulire il form.
 ticketForm.addEventListener("reset", function () {
-
+    
 })
 
 
@@ -77,7 +77,11 @@ function randomNumberMax9 (){
 }
 // Codice treno (numero casuale tra 90000 e 100000 escluso);
 // creo ciclo?
-var codiceTreno = randomNumberMax9 
+var codiceTicket;
+for(var i = 0; i < 5; i++){
+    randomNumberMax9 (i);
+    var codiceTicket = [i]
+}
 
 
 
