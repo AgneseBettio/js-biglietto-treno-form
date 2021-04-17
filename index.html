@@ -12,20 +12,60 @@
     <section class="calcolo-form">
         <h1>calcola il prezzo del tuo biglietto</h1>
     <div class="container">
-
+        <form id="ticket-form" class="d-flex">
+            <div class="box-form">
+                <label for="nome-passeggero">nome</label> <br>
+                <input type="text" id="nome-passeggero" name="nome" value="">   
+            </div>
+            <div class="box-form">
+                <label for="km-passeggero">quanti km devi percorrere</label> <br>
+                <input type="text" id="km-passeggero" name="km">
+            </div>
+            <div class="box-form">
+                <label for="eta-passeggero"> fascia di età</label> <br>
+                <select id="eta-passeggero" name="eta" >
+                    <option value="minorenne">minorenne</option>
+                    <option value="adulto">adulto</option>
+                    <option value="over65">over 65</option>
+                </select> 
+            </div>
+            <div class="box-form">
+                <button type="submit">
+                    genera
+                </button>
+                <button type="reset">
+                    annulla
+                </button>
+           </div>
+        </form>
     </div>
     </section>
 
     <section class="stampa-biglietto">
-    <h1>il tuo biglietto</h1>
-    <div class="container">
-    </div>
+        <h1>il tuo biglietto</h1>
+        <div class="container d-flex">
+            <div class="box-biglietto">
+                <p> nome passeggero</p><br>
+                <span id="nome-stampato" ></span>
+            </div>
+            <div class="box-biglietto">
+                <p>offerta</p><br>
+                <span id="offerta"></span>
+            </div>
+            <div class="box-biglietto">
+                <p>carrozza</p><br>
+                <span id="carrozza"></span>
+            </div>
+            <div class="box-biglietto">
+                <p>codice</p><br>
+                <span id="codice"></span>
+            </div>
+            <div class="box-biglietto">
+                <p>costo</p><br>
+                <span id ="costo"></span>
+            </div>
+        </div>
     </section> 
-        
-    
-    
-
-
     <script src="script.js"></script>
 </body>
 </html>

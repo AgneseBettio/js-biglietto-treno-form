@@ -14,3 +14,14 @@ section{
     padding: 30px 50px;
     background-color: #ffffff;
 }
+.d-flex{
+    display: flex;
+    padding: 15px 20px;
+}
+.box-biglietto{
+    flex-basis: 25%;
+}
+.box-form{
+    margin: 10px 15px;
+    width: 33,3%;
+}
