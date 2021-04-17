@@ -25,3 +25,9 @@ section{
     margin: 10px 15px;
     width: 33,3%;
 }
+.d-hidden{
+    display: none;
+}
+.d-inlineB {
+    display: inline-block;
+}

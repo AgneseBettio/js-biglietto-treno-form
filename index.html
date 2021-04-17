@@ -24,8 +24,8 @@
             <div class="box-form">
                 <label for="eta-passeggero"> fascia di età</label> <br>
                 <select id="eta-passeggero" name="eta" >
-                    <option value="minorenne">minorenne</option>
                     <option value="adulto">adulto</option>
+                    <option value="minorenne">minorenne</option>                    
                     <option value="over65">over 65</option>
                 </select> 
             </div>
@@ -41,28 +41,28 @@
     </div>
     </section>
 
-    <section class="stampa-biglietto">
+    <section class="stampa-biglietto " >
         <h1>il tuo biglietto</h1>
-        <div class="container d-flex">
+        <div class="container d-flex d-hidden" id="printed-ticket">
             <div class="box-biglietto">
                 <p> nome passeggero</p><br>
-                <span id="nome-stampato" ></span>
+                <span class="d-inlineB" id="nome-stampato" ></span>
             </div>
             <div class="box-biglietto">
                 <p>offerta</p><br>
-                <span id="offerta"></span>
+                <span class="d-inlineB" id="offerta"></span>
             </div>
             <div class="box-biglietto">
                 <p>carrozza</p><br>
-                <span id="carrozza"></span>
+                <span class="d-inlineB" id="carrozza"></span>
             </div>
             <div class="box-biglietto">
                 <p>codice</p><br>
-                <span id="codice"></span>
+                <span class="d-inlineB" id="codice"></span>
             </div>
             <div class="box-biglietto">
                 <p>costo</p><br>
-                <span id ="costo"></span>
+                <span class="d-inlineB" id ="costo"></span>
             </div>
         </div>
     </section> 
