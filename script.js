@@ -40,17 +40,17 @@ ticketForm.addEventListener("submit", function (event) {
     nomeUtenteStampato.innerHTML = nomeUtente;
     // //funzione calcolo prezzo
     // offertaStampato.innerHTML =
-    //     //funzione random carrozza
-    //     nCarrozzaStampato.innerHTML =
-    //     //funzione random ID codice biglietto
-    //     codidiceBigliettoStampato.innerHTML =
-    //     //funzione calcolo prezzo km e eta
-    //     costoBigliettoStampato.innerHTML = 
+    //funzione random carrozza
+    nCarrozzaStampato.innerHTML = randomNumberMax12();
+    //funzione random ID codice biglietto
+    codidiceBigliettoStampato.innerHTML = getRandomNumberBetween(10000, 99999);
+    //funzione calcolo prezzo km e eta
+    costoBigliettoStampato.innerHTML = function calcoloBiglietto(eta, kmUtente);
 })
 
 //se clicchiamo su annulla dobbiamo ripulire il form.
 ticketForm.addEventListener("reset", function () {
-    
+
 })
 
 
@@ -71,17 +71,15 @@ function calcoloBiglietto(eta, km) {
         return costo;
     }
 }
-//funzione per numeri random sino a 9
-function randomNumberMax9 (){
-    return Math.ceil(Math.random() * 9);
+//funzione per numeri random sino a 12
+function randomNumberMax12() {
+    return Math.ceil(Math.random() * 12);
 }
 // Codice treno (numero casuale tra 90000 e 100000 escluso);
-// creo ciclo?
-var codiceTicket;
-for(var i = 0; i < 5; i++){
-    randomNumberMax9 (i);
-    var codiceTicket = [i]
+function getRandomNumberBetween(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
 
 
 
