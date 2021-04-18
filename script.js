@@ -71,7 +71,7 @@ ticketForm.addEventListener("submit", function (event) {
         } else {
             costoBigliettoStampato.innerHTML = bigliettoDefault + "€";
         }    
-        showIt("printed-ticket");
+        showItFlex("printed-ticket");
     }
 })
 var bgColoredTicket = document.getElementById("name-section");
@@ -110,8 +110,8 @@ function randomNumberMax12() {
 function getRandomNumberBetween(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-function showIt(id) {
-    document.getElementById(id).style.display = 'inline-block';
+function showItFlex(id) {
+    document.getElementById(id).style.display = 'flex';
 }
 function hideIt(id) {
     document.getElementById(id).style.display = 'none';
