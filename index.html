@@ -4,36 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
     <title>Document</title>
 </head>
 <body>
 
     <section class="calcolo-form">
         <h1>calcola il prezzo del tuo biglietto</h1>
-    <div class="container">
-        <form id="ticket-form" class="d-flex">
-            <div class="box-form">
-                <label for="nome-passeggero">nome</label> <br>
-                <input type="text" id="nome-passeggero" name="nome" value="">   
+    <div class="container form-container">
+        <form id="ticket-form">
+            <div class="d-flex">
+                <div class="box-form">
+                    <label for="nome-passeggero">nome e cognome</label> <br>
+                    <input type="text" id="nome-passeggero" name="nome" value="">   
+                </div>
+                <div class="box-form">
+                    <label for="km-passeggero">km da percorrere</label> <br>
+                    <input type="text" id="km-passeggero" name="km">
+                </div>
+                <div class="box-form">
+                    <label for="eta-passeggero"> fascia di età</label> <br>
+                    <select id="eta-passeggero" name="eta" >
+                        <option value="adulto">adulto</option>
+                        <option value="minorenne">minorenne</option>                    
+                        <option value="over65">over 65</option>
+                    </select> 
+                </div>
             </div>
-            <div class="box-form">
-                <label for="km-passeggero">quanti km devi percorrere</label> <br>
-                <input type="text" id="km-passeggero" name="km">
-            </div>
-            <div class="box-form">
-                <label for="eta-passeggero"> fascia di età</label> <br>
-                <select id="eta-passeggero" name="eta" >
-                    <option value="adulto">adulto</option>
-                    <option value="minorenne">minorenne</option>                    
-                    <option value="over65">over 65</option>
-                </select> 
-            </div>
-            <div class="box-form">
-                <button type="submit">
+            <div class="box-form d-flex">
+                <button id="btn-submit" type="submit" class="btn">
                     genera
                 </button>
-                <button type="reset">
+                <button id="btn-reset" type="reset" class="btn">
                     annulla
                 </button>
            </div>
@@ -43,8 +48,8 @@
 
     <section class="stampa-biglietto " >
         <h1>il tuo biglietto</h1>
-        <div class="container d-flex d-hidden" id="printed-ticket">
-            <div class="box-biglietto">
+        <div class="container d-flex" id="printed-ticket">
+            <div class="box-biglietto" id="name-section">
                 <p> nome passeggero</p><br>
                 <span class="d-inlineB" id="nome-stampato" ></span>
             </div>

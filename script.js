@@ -46,36 +46,62 @@ ticketForm.addEventListener("submit", function (event) {
     var bigliettoDefault = (0.21 * parseInt(kmUtente)).toFixed(2);
     var bigliettoScontoMin = (bigliettoDefault - ((bigliettoDefault / 100) * 20)).toFixed(2);
     var bigliettoScontoOver = (bigliettoDefault - ((bigliettoDefault / 100) * 40)).toFixed(2);
-
-    // preparo per stampa valori in HTML
-    nomeUtenteStampato.innerHTML = nomeUtente;
-    //funzione calcolo prezzo
-    if (formElements.eta.value === "minorenne") {
-        offertaStampato.innerHTML = " sconto minorenne ";
-    } else if (formElements.eta.value === "over65") {
-        offertaStampato.innerHTML = " sconto over 65 ";
+    if (nomeUtente === "" || kmUtente === "") {
+        alert(" per l'emessione del biglietto bisogna compilare tutti i dati del form")
     } else {
-        offertaStampato.innerHTML = " non applicabile "
+        // preparo per stampa valori in HTML
+        nomeUtenteStampato.innerHTML = nomeUtente;
+        //funzione calcolo prezzo
+        if (formElements.eta.value === "minorenne") {
+            offertaStampato.innerHTML = " sconto minorenne ";
+        } else if (formElements.eta.value === "over65") {
+            offertaStampato.innerHTML = " sconto over 65 ";
+        } else {
+            offertaStampato.innerHTML = " non applicabile ";
+        }
+        //funzione random carrozza
+        nCarrozzaStampato.innerHTML = randomNumberMax12();
+        //funzione random ID codice biglietto
+        codidiceBigliettoStampato.innerHTML = getRandomNumberBetween(10000, 99999);
+        //funzione calcolo prezzo km e eta
+        if (etaFasciaUtente === "over65") {
+            costoBigliettoStampato.innerHTML = bigliettoScontoOver + "€";
+        } else if (etaFasciaUtente === "minorenne") {
+            costoBigliettoStampato.innerHTML = bigliettoScontoMin + "€";
+        } else {
+            costoBigliettoStampato.innerHTML = bigliettoDefault + "€";
+        }    
+        showIt("printed-ticket");
     }
-    //funzione random carrozza
-    nCarrozzaStampato.innerHTML = randomNumberMax12();
-    //funzione random ID codice biglietto
-    codidiceBigliettoStampato.innerHTML = getRandomNumberBetween(10000, 99999);
-    //funzione calcolo prezzo km e eta
-    if (formElements.eta.value === "over65") {
-        costoBigliettoStampato.innerHTML = bigliettoScontoOver + "€";
-    } else if (formElements.eta.value === "minorenne") {
-        costoBigliettoStampato.innerHTML = bigliettoScontoMin + "€";
-    } else {
-        costoBigliettoStampato.innerHTML = bigliettoDefault + "€";
-    }    
-    showIt("printed-ticket");
 })
+var bgColoredTicket = document.getElementById("name-section");
+bgColoredTicket.style.backgroundColor = "#e7e4e4";
 
 //se clicchiamo su annulla dobbiamo ripulire il form.
 ticketForm.addEventListener("reset", function (event) {
-    document.getElementById("printed-ticket").style.display = "none";
+    //vado  form per estrapolare elementi
+    var form = event.currentTarget;
+    //a leggere i campi inseriti nel form
+    var formElements = form.elements;
+    //estrapolo valori da elementi form
+    var nomeUtente = formElements.nome.value;
+    var kmUtente = formElements.km.value;
+    var etaFasciaUtente = formElements.eta.value;
+    // variabili per cancellare dati biglietto
+    var nomeUtenteStampato = document.getElementById("nome-stampato");
+    var offertaStampato = document.getElementById("offerta");
+    var nCarrozzaStampato = document.getElementById("carrozza");
+    var codidiceBigliettoStampato = document.getElementById("codice");
+    var costoBigliettoStampato = document.getElementById("costo");
+    // cancello span
+    var nomeUtenteStampato = "";
+    var offertaStampato = "";
+    var nCarrozzaStampato = "";
+    var codidiceBigliettoStampato = "";
+    var costoBigliettoStampato = "";
+    hideIt("printed-ticket");
 })
+
 //funzione per numeri random sino a 12
 function randomNumberMax12() {
     return Math.ceil(Math.random() * 12);
@@ -84,15 +110,30 @@ function randomNumberMax12() {
 function getRandomNumberBetween(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
 function showIt(id) {
-    document.getElementById(id).style.display = 'block';
+    document.getElementById(id).style.display = 'inline-block';
+}
+function hideIt(id) {
+    document.getElementById(id).style.display = 'none';
 }
 
+//colore bottoni - perchè così non va?
+// var colorBtn = document.querySelectorAll(".btn");
+// colorBtn.addEventListener("click", function(event){
+//     colorBtn.style.borderColor = "#B91450";
+// })
 
 
+//bnt click e reset
+var btnSubmit = document.getElementById("btn-submit");
+btnSubmit.addEventListener("click", function(event){
+    btnSubmit.style.borderColor = "#B91450";
+})
+var btnReset = document.getElementById("btn-reset");
+btnReset.addEventListener("click", function(event){
+    var btnSubmit = document.getElementById("btn-submit");
+    btnSubmit.style.borderColor = "#e7e4e4";
+})
 
-// if (kmPercorsi === "" || etaPasseggero === "") {
-//     alert("manca campo obligatorio")
 
 
