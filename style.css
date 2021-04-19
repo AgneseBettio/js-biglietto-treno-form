@@ -47,14 +47,11 @@ form label{
     border-color:  #e7e4e4;
     padding: 5px 8px;
     border-radius: 4px;
-    margin: 15px;
+    margin: 15px 30px;
     
 }
 .btn:hover{
     background-color: rgba(231, 228, 228, 0.5);
-}
-.box-biglietto{
-    flex-basis: 25%;
 }
 .box-form{
     margin: auto;
@@ -66,11 +63,18 @@ form label{
 #printed-ticket{
     padding: 30px 10px;
 }
-#name-section{
+#name-section, #offerta, #carrozza {
     flex-grow: 2;
+}
+#codice, #costo {
+    flex-grow: 1;
 }
 .box-biglietto{
     border-top: 2px solid grey;
     border-bottom: 2px solid grey;
     padding: 15px;
+}
+.box-biglietto p {
+    font-weight: 500;
+    font-size: 18px;
 }

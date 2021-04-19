@@ -93,7 +93,7 @@ ticketForm.addEventListener("reset", function (event) {
     var nCarrozzaStampato = document.getElementById("carrozza");
     var codidiceBigliettoStampato = document.getElementById("codice");
     var costoBigliettoStampato = document.getElementById("costo");
-    // cancello span
+    // cancello span ??
     var nomeUtenteStampato = "";
     var offertaStampato = "";
     var nCarrozzaStampato = "";
@@ -126,11 +126,11 @@ function hideIt(id) {
 
 //bnt click e reset
 var btnSubmit = document.getElementById("btn-submit");
-btnSubmit.addEventListener("click", function(event){
+btnSubmit.addEventListener("click", function(){
     btnSubmit.style.borderColor = "#B91450";
 })
 var btnReset = document.getElementById("btn-reset");
-btnReset.addEventListener("click", function(event){
+btnReset.addEventListener("click", function(){
     var btnSubmit = document.getElementById("btn-submit");
     btnSubmit.style.borderColor = "#e7e4e4";
 })
